@@ -5,8 +5,13 @@ import Footer from "@/components/common/footer";
 
 
 export const metadata: Metadata = {
-  title: "Vivd Tab",
-  description: "Simple and suggests an AI that makes sense of documents.",
+  title: "Vivid Tab: A new tab, a new vibe.",
+  description: "Customize your new tab with bookmarks, weather, to-dos, and more for a vibrant, productive browsing experience.",
+  icons: [
+    {
+      url: "/icon.png",
+    }
+  ]
 };
 
 export default function RootLayout({

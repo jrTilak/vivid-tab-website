@@ -1,5 +1,10 @@
 import { MAIL } from "@/constants"
+import { Metadata } from "next";
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Terms of Service | Vivid Tab: A new tab, a new vibe.",
+};
 
 export default function TermsPage() {
   return (

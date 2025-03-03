@@ -1,5 +1,10 @@
 import { MAIL } from "@/constants"
+import { Metadata } from "next";
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Vivid Tab: A new tab, a new vibe.",
+};
 
 export default function PolicyPage() {
   return (
