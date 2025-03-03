@@ -1,0 +1,64 @@
+import { MAIL } from "@/constants"
+import Link from "next/link"
+
+export default function PolicyPage() {
+  return (
+    <div className="min-h-screen  flex justify-center">
+      <div className="max-w-3xl w-full px-4 py-12">
+
+        <h1 className="text-3xl font-bold mb-6 underline">Privacy Policy</h1>
+
+        <p className="mb-8">
+          At <span className="font-semibold">Vivid Tab</span>, your privacy is our priority. We do not collect or use your personal data. Here&apos;s what we
+          access and why:
+        </p>
+
+        <h2 className="text-xl font-semibold mb-4">Permissions We Access:</h2>
+
+        <ul className="list-disc pl-6 space-y-3 mb-8">
+          <li>
+            <span className="font-semibold">Location:</span> We access your location to provide relevant weather updates based on your region.
+          </li>
+          <li>
+            <span className="font-semibold">History:</span> We access your browsing history to display quick links to sites you&apos;ve visited, enhancing
+            your browsing experience.
+          </li>
+          <li>
+            <span className="font-semibold">Bookmarks:</span> We access your bookmarks to allow you to add and display shortcuts for easy access.
+          </li>
+        </ul>
+
+        <h2 className="text-xl font-semibold mb-4">No Data Collection or Sharing</h2>
+
+        <p className="mb-8">
+          We do not collect, store, or send any data to external servers. All the data (location, history, and
+          bookmarks) is kept locally on your device. We are committed to your privacy and ensure that
+          everything you interact with remains private.
+        </p>
+
+        <h2 className="text-xl font-semibold mb-4">Security</h2>
+
+        <p className="mb-8">
+          Since all data is stored locally, your information is not shared with anyone. Your data stays private and
+          secure on your device at all times.
+        </p>
+
+        <h2 className="text-xl font-semibold mb-4">Updates</h2>
+
+        <p className="mb-6">
+          This privacy policy may change as we continue to improve the extension. Any updates will be posted
+          here.
+        </p>
+
+        <p className="mb-8">
+          If you have any questions or concerns, feel free to contact at{" "}
+          <Link href={`mailto:${MAIL}`} className="text-destructive hover:underline">
+            {MAIL}
+          </Link>.
+        </p>
+
+        <div className="border-t border-gray-700 mt-8" />
+      </div>
+    </div>
+  )
+}
