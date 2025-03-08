@@ -18,7 +18,7 @@ const features = [
     "description": "Search instantly with built-in AI, search engines, or directly on YouTube—right from your new tab.",
     "id": "smart-search",
     icon: BrainCircuitIcon,
-    image: "/preview.png",
+    image: "/smart-search-preview.png",
 
   },
   {
@@ -26,7 +26,7 @@ const features = [
     "description": "Drag and drop components, change backgrounds, and tailor your new tab to match your workflow and style.",
     "id": "customizable",
     icon: LayersIcon,
-    image: "/preview.png",
+    image: "/custom-bg-preview.png",
 
   },
 
