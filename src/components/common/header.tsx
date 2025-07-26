@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/sheet";
 import { useState } from "react";
 import { MenuIcon } from "lucide-react";
-import { BMC, CONTACT_LINK, WEBSTORE_LINK } from "@/constants";
+import { CONTACT_LINK, WEBSTORE_LINK } from "@/constants";
 
 const NAV_ITEMS: {
   label: string;
@@ -70,21 +70,11 @@ export default function Header() {
             <Image src="/chrome.svg" alt="Chrome Web Store" width={24} height={24} />
             Download Now
           </Link>
-          <Link href={BMC} className={buttonVariants({
-            variant: "ghost",
-            size: "icon",
-            className: "h-8 w-8"
-          })} target="_blank">
-            <Image src={"/bmc.png"} alt="" width={24} height={24} className="rounded-md w-full h-full" />
-          </Link>
         </div>
 
         <div className="flex flex-1 justify-end md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <div className="flex gap-2 items-center justify-center">
-              <Button variant={"ghost"} size={"icon"} className="h-8 w-8">
-                <Image src={"/bmc.png"} alt="" width={24} height={24} className="rounded-md w-full h-full" />
-              </Button>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
                   <MenuIcon className="size-8" />

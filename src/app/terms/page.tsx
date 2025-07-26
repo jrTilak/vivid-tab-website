@@ -24,8 +24,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold mb-4">2. License</h2>
           <p>
             Vivid Tab is an open-source project. You are free to fork, modify, and use the code for personal or
-            non-commercial purposes, with proper attribution to the original creator. For commercial use, please contact
-            us first.
+            non-commercial purposes, with proper attribution to the original creator.
           </p>
         </section>
 
@@ -34,13 +33,13 @@ export default function TermsPage() {
           <p className="mb-4">The extension requires access to:</p>
           <ul className="list-disc pl-6 space-y-3">
             <li>
-              <span className="font-semibold">Location:</span> To provide weather updates based on your region.
+              <span className="font-semibold">Location (optional):</span> To provide weather updates based on your region.
             </li>
             <li>
-              <span className="font-semibold">History:</span> To display visited websites for quick access.
+              <span className="font-semibold">History (optional):</span> To display visited websites for quick access.
             </li>
             <li>
-              <span className="font-semibold">Bookmarks:</span> To show your saved bookmarks as shortcuts.
+              <span className="font-semibold">Bookmarks (required):</span> To show your saved bookmarks as shortcuts.
             </li>
           </ul>
         </section>

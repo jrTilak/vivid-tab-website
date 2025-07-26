@@ -11,7 +11,10 @@ export default function PolicyPage() {
     <div className="min-h-screen  flex justify-center">
       <div className="max-w-3xl w-full px-4 py-12">
 
-        <h1 className="text-3xl font-bold mb-6 underline">Privacy Policy</h1>
+        <div className="flex items-center gap-2">
+          <h1 className="text-xl sm:text-3xl font-bold mb-6 underline">Privacy Policy</h1>
+          <span className="no-underline mb-4 text-sm sm:text-lg">(Last updated: 7/26/2025)</span>
+        </div>
 
         <p className="mb-8">
           At <span className="font-semibold">Vivid Tab</span>, your privacy is our priority. We do not collect or use your personal data. Here&apos;s what we
@@ -22,14 +25,14 @@ export default function PolicyPage() {
 
         <ul className="list-disc pl-6 space-y-3 mb-8">
           <li>
-            <span className="font-semibold">Location:</span> We access your location to provide relevant weather updates based on your region.
+            <span className="font-semibold">Location (optional):</span> We access your location to provide relevant weather updates based on your region. You can disable this permission if you prefer not to share your location.
           </li>
           <li>
-            <span className="font-semibold">History:</span> We access your browsing history to display quick links to sites you&apos;ve visited, enhancing
-            your browsing experience.
+            <span className="font-semibold">History (optional, readonly):</span> We access your browsing history to display quick links to sites you&apos;ve visited, enhancing
+            your browsing experience. You can disable this permission if you prefer not to show your browsing history in quick links.
           </li>
           <li>
-            <span className="font-semibold">Bookmarks:</span> We access your bookmarks to allow you to add and display shortcuts for easy access.
+            <span className="font-semibold">Bookmarks (required):</span> We access your bookmarks to allow you to add and display shortcuts for easy access. This extensions core features rely on this permission, so bookmark access is required.
           </li>
         </ul>
 
