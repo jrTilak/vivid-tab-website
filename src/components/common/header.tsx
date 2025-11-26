@@ -16,7 +16,8 @@ import {
 } from "@/components/ui/sheet";
 import { useState } from "react";
 import { MenuIcon } from "lucide-react";
-import { CONTACT_LINK, WEBSTORE_LINK } from "@/constants";
+import { CONTACT_LINK } from "@/constants";
+import { getBrowser } from "@/lib/browser";
 
 const NAV_ITEMS: {
   label: string;
@@ -29,12 +30,45 @@ const NAV_ITEMS: {
   { label: "Contact Us", href: CONTACT_LINK, external: true },
 ] as const;
 
-
-
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  const getDownloadButton = () => {
+    const b = getBrowser();
+    if (b == "firefox") {
+      return (
+        <Link
+          href={process.env.NEXT_PUBLIC_FIREFOX_ADDON_URL as string}
+          target="_blank"
+          className={buttonVariants({ variant: "secondary" })}
+        >
+          <Image
+            src="/firefox.svg"
+            alt="Firefox Addon Store"
+            width={24}
+            height={24}
+          />
+          Download Now
+        </Link>
+      );
+    }
+    return (
+      <Link
+        href={process.env.NEXT_PUBLIC_CHROME_WEBSTORE_URL as string}
+        target="_blank"
+        className={buttonVariants({ variant: "secondary" })}
+      >
+        <Image
+          src="/chrome.svg"
+          alt="Firefox Addon Store"
+          width={24}
+          height={24}
+        />
+        Download Now
+      </Link>
+    );
+  };
   return (
     <header className="sticky top-0 w-full border-b bg-background z-50">
       <nav className="container flex h-14 items-center">
@@ -45,17 +79,19 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div
-          className="hidden md:flex md:flex-1"
-        >
+        <div className="hidden md:flex md:flex-1">
           <ul className="flex flex-1 items-center justify-center space-x-8">
             {NAV_ITEMS.map((item) => (
-              <li key={item.href} >
+              <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={cn(`text-sm font-medium transition-colors hover:text-primary`, pathname === item.href ? "text-primary font-medium" : "text-muted-foreground")}
+                  className={cn(
+                    `text-sm font-medium transition-colors hover:text-primary`,
+                    pathname === item.href
+                      ? "text-primary font-medium"
+                      : "text-muted-foreground"
+                  )}
                   target={item.external ? "_blank" : undefined}
-
                 >
                   {item.label}
                 </Link>
@@ -64,12 +100,9 @@ export default function Header() {
           </ul>
         </div>
 
-        {/* Login Button (Desktop) */}
+        {/* Download Button (Desktop) */}
         <div className="hidden md:flex gap-4 items-center justify-center">
-          <Link href={WEBSTORE_LINK} target="_blank" className={buttonVariants({ variant: "secondary" })}>
-            <Image src="/chrome.svg" alt="Chrome Web Store" width={24} height={24} />
-            Download Now
-          </Link>
+          {getDownloadButton()}
         </div>
 
         <div className="flex flex-1 justify-end md:hidden">
@@ -87,12 +120,11 @@ export default function Header() {
               </SheetHeader>
               <div className="flex flex-col gap-2 py-6 h-full">
                 {NAV_ITEMS.map((item) => (
-                  <div
-                    key={item.href}
-                  >
+                  <div key={item.href}>
                     <Link
                       href={item.href}
-                      className={cn(`flex w-full items-center py-2 text-lg font-medium`,
+                      className={cn(
+                        `flex w-full items-center py-2 text-lg font-medium`,
                         pathname === item.href
                           ? "text-primary"
                           : "text-muted-foreground"
@@ -104,19 +136,12 @@ export default function Header() {
                     </Link>
                   </div>
                 ))}
-                <div
-                  className="mt-auto w-full"
-                >
-                  <Link href={WEBSTORE_LINK} target="_blank" className={buttonVariants({ variant: "secondary", className: "w-full" })}>
-                    <Image src="/chrome.svg" alt="Chrome Web Store" width={24} height={24} />
-                    Download Now
-                  </Link>
-                </div>
+                <div className="mt-auto w-full">{getDownloadButton()}</div>
               </div>
             </SheetContent>
           </Sheet>
         </div>
       </nav>
-    </header >
+    </header>
   );
 }

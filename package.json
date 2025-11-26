@@ -1,11 +1,11 @@
 {
-  "name": "chat-with-pdf",
-  "version": "0.1.0",
+  "name": "vivid-tab-website",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next startclear",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
