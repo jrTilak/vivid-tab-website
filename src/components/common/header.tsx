@@ -14,7 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MenuIcon } from "lucide-react";
 import { CONTACT_LINK } from "@/constants";
 import { getBrowser } from "@/lib/browser";
@@ -33,10 +33,17 @@ const NAV_ITEMS: {
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [browser, setBrowser] = useState<"chrome" | "firefox" | "other">(
+    "other"
+  );
+
+  useEffect(() => {
+    const b = getBrowser();
+    setBrowser(b);
+  }, []);
 
   const getDownloadButton = () => {
-    const b = getBrowser();
-    if (b == "firefox") {
+    if (browser === "firefox") {
       return (
         <Link
           href={process.env.NEXT_PUBLIC_FIREFOX_ADDON_URL as string}
