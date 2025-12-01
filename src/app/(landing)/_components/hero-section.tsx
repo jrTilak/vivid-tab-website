@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { GITHUB, WEBSTORE_LINK } from "@/constants";
+import { GITHUB } from "@/constants";
 import { ArrowRightIcon, GithubIcon } from "lucide-react";
 import HeroVideoDialog from "./hero-video-dialog";
 
@@ -34,26 +34,27 @@ export default function HeroSection() {
       </svg>
       <div className="container px-6  pt-10 lg:flex lg:px-8 lg:pt-40">
         <div className="max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-          <div
-          >
+          <div>
             <div className="mt-12 sm:mt-24 lg:mt-16">
               <Link href={"/whats-new"} className="inline-flex space-x-6 ">
-                <Badge variant={"outline"}>🚀 New Released v1.1.0</Badge>
+                <Badge variant={"outline"}>🚀 New Released v1.2.0</Badge>
               </Link>
             </div>
             <h1 className="mt-10 text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              Vivid Tab: A new tab, <br />a  <span className="text-destructive">new</span>  vibe.
+              Vivid Tab: A new tab, <br />a{" "}
+              <span className="text-destructive">new</span> vibe.
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Customize your new tab with bookmarks, weather, to-dos, and more for a vibrant, productive browsing experience.
+              Customize your new tab with bookmarks, weather, to-dos, and more
+              for a vibrant, productive browsing experience.
             </p>
             <div className="mt-10 flex items-center gap-x-6">
-              <Button asChild size="lg" >
-                <Link href={WEBSTORE_LINK} target="_blank">
+              <Button asChild size="lg">
+                <Link href={"/download"}>
                   Get it now! <ArrowRightIcon size={24} />
                 </Link>
               </Button>
-              <Button variant={"outline"} asChild size="lg" >
+              <Button variant={"outline"} asChild size="lg">
                 <Link href={GITHUB} target="_blank">
                   Github <GithubIcon />
                 </Link>

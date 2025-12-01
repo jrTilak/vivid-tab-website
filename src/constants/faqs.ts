@@ -29,4 +29,19 @@ export const FAQS = [
     answer:
       "Of course! Vivid Tab is open-source, and you’re welcome to contribute on GitHub. 🚀",
   },
+  {
+    question: "Is there a dark mode?",
+    answer:
+      "Yes! Vivid Tab supports dark mode, making it comfortable to use in low-light conditions.",
+  },
+  {
+    question: "Can I make my newtab look like my desktop?",
+    answer:
+      "Yes! You can customize the background, add widgets, and arrange components to match your desktop environment using vivid tab.",
+  },
+  {
+    question: "Which browser is supported?",
+    answer:
+      "Vivid Tab is compatible with all major firefox and chromimun based browsers. Eg: Chrome, Firefox, Brave, Helium, Vivaldi....",
+  }
 ];
