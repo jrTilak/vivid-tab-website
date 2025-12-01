@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Chrome, Github, Globe } from "lucide-react";
+import { Github } from "lucide-react";
 import Link from "next/link";
 import { getBrowser } from "@/lib/browser";
 
@@ -87,3 +87,4 @@ export default function DownloadPage() {
     </main>
   );
 }
+
