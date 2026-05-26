@@ -37,7 +37,7 @@ export default function HeroSection() {
           <div>
             <div className="mt-12 sm:mt-24 lg:mt-16">
               <Link href={"/whats-new"} className="inline-flex space-x-6 ">
-                <Badge variant={"outline"}>🚀 New Released v1.2.0</Badge>
+                <Badge variant={"outline"}>🚀 New Release v1.3.0</Badge>
               </Link>
             </div>
             <h1 className="mt-10 text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
